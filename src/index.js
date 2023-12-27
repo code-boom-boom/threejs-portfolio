@@ -1,4 +1,7 @@
-import './styles/main.css'
-import Application from './Application.js'
+import './style/main.css'
+import Application from './javascript/Application.js'
 
-window.application = new Application(document.getElementById('canvas'))
+window.application = new Application({
+    $canvas: document.querySelector('.js-canvas'),
+    useComposer: true
+})
