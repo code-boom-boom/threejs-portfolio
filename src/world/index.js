@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import Floor from './Floor'
+import Sounds from './Sounds'
 
 export default class World {
   constructor(_options) {
@@ -23,7 +24,15 @@ export default class World {
     this.container = new THREE.Object3D()
     this.container.matrixAutoUpdate = false
 
+    this.setSounds()
     this.setFloor()
+  }
+
+  setSounds() {
+    this.sounds = new Sounds({
+      debug: this.debugFolder,
+      time: this.time,
+    })
   }
 
   setFloor() {
