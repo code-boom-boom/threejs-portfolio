@@ -2,14 +2,39 @@
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "webpack --config bundler/webpack.prod.js",
+    "dev": "webpack-dev-server --config bundler/webpack.dev.js",
+    "watch": "webpack --watch --config ./bundler/webpack.config.js",
+    "lint": "npx eslint src --fix"
   },
-  "devDependencies": {
-    "eslint": "^8.56.0",
-    "vite": "^5.0.8"
+  "main": "index.js",
+  "devDependencies": {},
+  "dependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "babel-loader": "^8.0.6",
+    "cannon": "^0.6.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.4.0",
+    "dat.gui": "^0.7.9",
+    "file-loader": "^5.0.2",
+    "glslify-loader": "^2.0.0",
+    "gsap": "^3.12.4",
+    "howler": "^2.1.2",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "raw-loader": "^4.0.0",
+    "style-loader": "^1.1.2",
+    "three": "0.131.3",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1",
+    "webpack-merge": "^4.2.2"
+  },
+  "staticFiles": {
+    "staticPath": "static",
+    "watcherGlob": "**"
   }
 }
